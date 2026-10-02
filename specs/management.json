@@ -13,7 +13,7 @@
       "name": "Apache-2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version": "2026.08.4",
+    "version": "2026.09.1",
     "x-logo": {
       "url": "logo.svg",
       "backgroundColor": "transparent",
@@ -379,11 +379,6 @@
       "name": "OktaManagedUserAccount",
       "x-displayName": "Okta Managed User Accounts",
       "description": "The Okta Managed User Accounts API provides operations to manage user accounts in Okta Universal Directory with Okta Privileged Access (OPA).\n\nYou can also manage Okta users with Okta Privileged Access through the Admin Console. Okta users designated with privileged access are treated as service accounts and appear in the **Service Accounts** section of the Admin Console. You can then use Okta Privileged Access to implement security measures for the user account that's designated as a service account. See [Manage service accounts](https://help.okta.com/okta_help.htm?type=oie&id=ud-privileged-acnt).\n\n> **Note:** This feature is available only if you're subscribed to Okta Privileged Access. Ensure that you've set up the Okta Privileged Access app before managing Okta user accounts through this API."
-    },
-    {
-      "name": "OktaPersonalSettings",
-      "x-displayName": "Okta Personal Settings",
-      "description": "The Okta Personal Settings API provides operations to manage the [Okta Personal](https://www.okta.com/products/okta-personal/workforce) settings of your Okta org."
     },
     {
       "name": "OrgCreator",
@@ -46394,171 +46389,8 @@
         }
       }
     },
-    "/okta-personal-settings/api/v1/edit-feature": {
-      "put": {
-        "summary": "Replace the Okta Personal admin settings",
-        "description": "Replaces Okta Personal admin settings in a Workforce org",
-        "operationId": "replaceOktaPersonalAdminSettings",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/OktaPersonalAdminFeatureSettings"
-              },
-              "examples": {
-                "exampleSettings": {
-                  "$ref": "#/components/examples/editFeatureExample"
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "204": {
-            "description": "No Content",
-            "content": {}
-          },
-          "401": {
-            "$ref": "#/components/responses/Error-FF-NotEnabled-Response-401"
-          },
-          "403": {
-            "$ref": "#/components/responses/ErrorAccessDenied403"
-          },
-          "404": {
-            "$ref": "#/components/responses/ErrorResourceNotFound404"
-          },
-          "429": {
-            "$ref": "#/components/responses/ErrorTooManyRequests429"
-          }
-        },
-        "security": [
-          {
-            "apiToken": []
-          },
-          {
-            "oauth2": [
-              "okta.personal.adminSettings.manage"
-            ]
-          }
-        ],
-        "tags": [
-          "OktaPersonalSettings"
-        ],
-        "x-okta-lifecycle": {
-          "lifecycle": "GA",
-          "isGenerallyAvailable": true
-        }
-      }
-    },
-    "/okta-personal-settings/api/v1/export-blocklists": {
-      "get": {
-        "summary": "List all blocked email domains",
-        "description": "Lists all blocked email domains which are excluded from app migration",
-        "operationId": "listPersonalAppsExportBlockList",
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PersonalAppsBlockList"
-                },
-                "examples": {
-                  "exampleSettings": {
-                    "$ref": "#/components/examples/getBlockListExample"
-                  }
-                }
-              }
-            }
-          },
-          "401": {
-            "$ref": "#/components/responses/Error-FF-NotEnabled-Response-401"
-          },
-          "403": {
-            "$ref": "#/components/responses/ErrorAccessDenied403"
-          },
-          "404": {
-            "$ref": "#/components/responses/ErrorResourceNotFound404"
-          },
-          "429": {
-            "$ref": "#/components/responses/ErrorTooManyRequests429"
-          }
-        },
-        "security": [
-          {
-            "apiToken": []
-          },
-          {
-            "oauth2": [
-              "okta.personal.adminSettings.read"
-            ]
-          }
-        ],
-        "tags": [
-          "OktaPersonalSettings"
-        ],
-        "x-okta-lifecycle": {
-          "lifecycle": "GA",
-          "isGenerallyAvailable": true
-        }
-      },
-      "put": {
-        "summary": "Replace the blocked email domains",
-        "description": "Replaces the list of blocked email domains which are excluded from app migration",
-        "operationId": "replaceBlockedEmailDomains",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/PersonalAppsBlockList"
-              },
-              "examples": {
-                "exampleSettings": {
-                  "$ref": "#/components/examples/getBlockListExample"
-                }
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "204": {
-            "description": "No Content",
-            "content": {}
-          },
-          "401": {
-            "$ref": "#/components/responses/Error-FF-NotEnabled-Response-401"
-          },
-          "403": {
-            "$ref": "#/components/responses/ErrorAccessDenied403"
-          },
-          "404": {
-            "$ref": "#/components/responses/ErrorResourceNotFound404"
-          },
-          "429": {
-            "$ref": "#/components/responses/ErrorTooManyRequests429"
-          }
-        },
-        "security": [
-          {
-            "apiToken": []
-          },
-          {
-            "oauth2": [
-              "okta.personal.adminSettings.manage"
-            ]
-          }
-        ],
-        "tags": [
-          "OktaPersonalSettings"
-        ],
-        "x-okta-lifecycle": {
-          "lifecycle": "GA",
-          "isGenerallyAvailable": true
-        }
-      }
-    },
+    "/okta-personal-settings/api/v1/edit-feature": {},
+    "/okta-personal-settings/api/v1/export-blocklists": {},
     "/privileged-access/api/v1/containers/{containerId}/prepare-resources": {
       "parameters": [
         {
@@ -121083,6 +120915,9 @@
               "contentSecurityPolicySetting": {
                 "$ref": "#/components/schemas/ContentSecurityPolicySetting"
               },
+              "widgetConfiguration": {
+                "$ref": "#/components/schemas/WidgetConfiguration"
+              },
               "widgetCustomizations": {
                 "type": "object",
                 "properties": {
@@ -127952,6 +127787,234 @@
           }
         }
       },
+      "WidgetConfiguration": {
+        "x-okta-lifecycle": {
+          "lifecycle": "EA",
+          "isGenerallyAvailable": false,
+          "SKUs": [
+            "Okta Identity Engine"
+          ]
+        },
+        "description": "<x-lifecycle-container><x-lifecycle class=\"ea\"></x-lifecycle> <x-lifecycle class=\"oie\"></x-lifecycle></x-lifecycle-container>The Sign-In Widget configuration object containing branding, features, theme tokens, and other customization settings.",
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "assets": {
+            "type": "object",
+            "properties": {
+              "baseUrl": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          "brandName": {
+            "type": "string",
+            "description": "Brand name displayed on the widget"
+          },
+          "colors": {
+            "type": "object",
+            "description": "Color customizations for the Sign-In Widget",
+            "properties": {
+              "brand": {
+                "type": "string",
+                "description": "Primary brand color (hex value, e.g. \"#1662dd\")"
+              }
+            },
+            "additionalProperties": false
+          },
+          "features": {
+            "type": "object",
+            "properties": {
+              "router": {
+                "type": "boolean"
+              },
+              "securityImage": {
+                "type": "boolean"
+              },
+              "rememberMe": {
+                "type": "boolean"
+              },
+              "autoPush": {
+                "type": "boolean"
+              },
+              "smsRecovery": {
+                "type": "boolean"
+              },
+              "callRecovery": {
+                "type": "boolean"
+              },
+              "emailRecovery": {
+                "type": "boolean"
+              },
+              "webauthn": {
+                "type": "boolean"
+              },
+              "selfServiceUnlock": {
+                "type": "boolean"
+              },
+              "multiOptionalFactorEnroll": {
+                "type": "boolean"
+              },
+              "deviceFingerprinting": {
+                "type": "boolean"
+              },
+              "hideSignOutLinkInMFA": {
+                "type": "boolean"
+              },
+              "hideBackToSignInForReset": {
+                "type": "boolean"
+              },
+              "customExpiredPassword": {
+                "type": "boolean"
+              },
+              "registration": {
+                "type": "boolean"
+              },
+              "idpDiscovery": {
+                "type": "boolean"
+              },
+              "passwordlessAuth": {
+                "type": "boolean"
+              },
+              "showPasswordToggleOnSignInPage": {
+                "type": "boolean"
+              },
+              "trackTypingPattern": {
+                "type": "boolean"
+              },
+              "redirectByFormSubmit": {
+                "type": "boolean"
+              },
+              "sameDeviceOVEnrollmentEnabled": {
+                "type": "boolean"
+              },
+              "useDeviceFingerprintForSecurityImage": {
+                "type": "boolean"
+              },
+              "showPasswordRequirementsAsHtmlList": {
+                "type": "boolean"
+              },
+              "mfaOnlyFlow": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
+          },
+          "hcaptcha": {
+            "type": "object",
+            "properties": {
+              "scriptSource": {
+                "type": "string"
+              },
+              "scriptParams": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "helpLinks": {
+            "type": "object",
+            "properties": {
+              "help": {
+                "type": "string"
+              },
+              "forgotPassword": {
+                "type": "string"
+              },
+              "factorPage": {
+                "type": "object",
+                "properties": {
+                  "text": {
+                    "type": "string"
+                  },
+                  "href": {
+                    "type": "string"
+                  },
+                  "target": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "text",
+                  "href"
+                ],
+                "additionalProperties": false
+              },
+              "unlock": {
+                "type": "string"
+              },
+              "custom": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "text": {
+                      "type": "string"
+                    },
+                    "href": {
+                      "type": "string"
+                    },
+                    "target": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "text",
+                    "href"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          },
+          "helpSupportNumber": {
+            "type": "string",
+            "description": "Support phone number displayed on the widget"
+          },
+          "i18n": {
+            "$ref": "#/components/schemas/WidgetConfigurationI18n"
+          },
+          "language": {
+            "type": "string",
+            "description": "Language code for the widget"
+          },
+          "logo": {
+            "type": "string",
+            "description": "URL for the logo displayed on the Sign-In Widget"
+          },
+          "logoText": {
+            "type": "string",
+            "description": "Alt text for the logo"
+          },
+          "recaptcha": {
+            "type": "object",
+            "properties": {
+              "scriptSource": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          },
+          "signOutLink": {
+            "type": "string",
+            "description": "Custom sign-out URL"
+          },
+          "theme": {
+            "type": "object",
+            "properties": {
+              "tokens": {
+                "$ref": "#/components/schemas/WidgetConfigurationThemeTokens"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
       "WidgetConfigurationI18n": {
         "description": "Internationalization overrides. Keys are locale codes (e.g. \"en\", \"ja\", \"fr\"), values are objects mapping i18n keys to string overrides.",
         "additionalProperties": {
@@ -129264,8 +129327,6 @@
               "okta.oauthIntegrations.read": "Allows the app to read API service Integration instances in your Okta organization",
               "okta.orgs.manage": "Allows the app to manage organization-specific details for your Okta organization",
               "okta.orgs.read": "Allows the app to read organization-specific details about your Okta organization",
-              "okta.personal.adminSettings.manage": "Allows the app to manage the personal admin settings for the signed-in user",
-              "okta.personal.adminSettings.read": "Allows the app to read the personal admin settings for the signed-in user",
               "okta.policies.manage": "Allows the app to manage policies in your Okta organization",
               "okta.policies.read": "Allows the app to read information about policies in your Okta organization",
               "okta.principalRateLimits.manage": "Allows the app to create and manage Principal Rate Limits in your Okta organization",
@@ -129449,7 +129510,6 @@
     {
       "name": "Org Management",
       "tags": [
-        "OktaPersonalSettings",
         "OrgSettingAdmin",
         "OrgSettingCommunication",
         "OrgSettingContact",
