@@ -13,7 +13,7 @@
       "name": "Apache-2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version": "2026.09.2",
+    "version": "2026.41.0",
     "x-logo": {
       "url": "logo.svg",
       "backgroundColor": "transparent",
@@ -16037,7 +16037,7 @@
     "/api/v1/device-integrations": {
       "get": {
         "x-okta-lifecycle": {
-          "lifecycle": "LIMITED_GA",
+          "lifecycle": "GA",
           "isGenerallyAvailable": false,
           "SKUs": []
         },
@@ -16091,7 +16091,7 @@
       ],
       "get": {
         "x-okta-lifecycle": {
-          "lifecycle": "LIMITED_GA",
+          "lifecycle": "GA",
           "isGenerallyAvailable": false,
           "SKUs": []
         },
@@ -16162,7 +16162,7 @@
       ],
       "post": {
         "x-okta-lifecycle": {
-          "lifecycle": "LIMITED_GA",
+          "lifecycle": "GA",
           "isGenerallyAvailable": false,
           "SKUs": []
         },
@@ -16230,7 +16230,7 @@
       ],
       "post": {
         "x-okta-lifecycle": {
-          "lifecycle": "LIMITED_GA",
+          "lifecycle": "GA",
           "isGenerallyAvailable": false,
           "SKUs": []
         },
@@ -50800,8 +50800,7 @@
       "AuthenticatorMethodWebAuthnWithRebrandSettings": {
         "x-okta-lifecycle": {
           "lifecycle": "GA",
-          "isGenerallyAvailable": false,
-          "SKUs": []
+          "isGenerallyAvailable": true
         },
         "summary": "Passkeys method with rebranded and new settings",
         "value": {
@@ -50951,8 +50950,7 @@
         },
         "x-okta-lifecycle": {
           "lifecycle": "GA",
-          "isGenerallyAvailable": false,
-          "SKUs": []
+          "isGenerallyAvailable": true
         }
       },
       "AuthenticatorResponseDuo": {
@@ -51353,8 +51351,7 @@
         },
         "x-okta-lifecycle": {
           "lifecycle": "GA",
-          "isGenerallyAvailable": false,
-          "SKUs": []
+          "isGenerallyAvailable": true
         }
       },
       "AuthenticatorsResponse": {
@@ -51517,8 +51514,7 @@
       "AuthenticatorsResponseWithWebAuthnNameAndDescription": {
         "x-okta-lifecycle": {
           "lifecycle": "GA",
-          "isGenerallyAvailable": false,
-          "SKUs": []
+          "isGenerallyAvailable": true
         },
         "summary": "Org authenticators with Passkey (FIDO2 WebAuthn) authenticator name and description",
         "value": [
@@ -94044,8 +94040,7 @@
           "description": {
             "x-okta-lifecycle": {
               "lifecycle": "GA",
-              "isGenerallyAvailable": false,
-              "SKUs": []
+              "isGenerallyAvailable": true
             },
             "description": "The description of the authenticator. This setting is only available for the `webauthn` authenticator type (Passkeys).",
             "type": "string"
@@ -127172,8 +127167,7 @@
       "UserVerificationEnumForVerify": {
         "x-okta-lifecycle": {
           "lifecycle": "GA",
-          "isGenerallyAvailable": false,
-          "SKUs": []
+          "isGenerallyAvailable": true
         },
         "description": "User verification settings for verification. This setting controls the user verification requirement during authentication (verification). It determines whether the authenticator requires user verification when a user signs in with an already-registered credential.\n\nFor verification, the value defaults to `PREFERRED`, unless the enrollment setting is `REQUIRED`. If the enrollment setting is `REQUIRED` for the authenticator, then the verification setting is also implicitly `REQUIRED`.",
         "type": "string",
@@ -127420,8 +127414,7 @@
         "default": true,
         "x-okta-lifecycle": {
           "lifecycle": "GA",
-          "isGenerallyAvailable": false,
-          "SKUs": []
+          "isGenerallyAvailable": true
         },
         "type": "boolean"
       },
@@ -127430,8 +127423,7 @@
         "default": false,
         "x-okta-lifecycle": {
           "lifecycle": "GA",
-          "isGenerallyAvailable": false,
-          "SKUs": []
+          "isGenerallyAvailable": true
         },
         "type": "boolean"
       },
@@ -127450,8 +127442,7 @@
         "default": false,
         "x-okta-lifecycle": {
           "lifecycle": "GA",
-          "isGenerallyAvailable": false,
-          "SKUs": []
+          "isGenerallyAvailable": true
         },
         "type": "boolean"
       },
@@ -127460,8 +127451,7 @@
         "default": false,
         "x-okta-lifecycle": {
           "lifecycle": "GA",
-          "isGenerallyAvailable": false,
-          "SKUs": []
+          "isGenerallyAvailable": true
         },
         "type": "boolean"
       },
@@ -127470,8 +127460,7 @@
         "default": "REQUIRED",
         "x-okta-lifecycle": {
           "lifecycle": "GA",
-          "isGenerallyAvailable": false,
-          "SKUs": []
+          "isGenerallyAvailable": true
         },
         "type": "string",
         "enum": [
@@ -127490,8 +127479,7 @@
         "default": false,
         "x-okta-lifecycle": {
           "lifecycle": "GA",
-          "isGenerallyAvailable": false,
-          "SKUs": []
+          "isGenerallyAvailable": true
         },
         "type": "boolean"
       },
